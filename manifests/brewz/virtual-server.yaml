@@ -22,13 +22,15 @@ spec:
       service: spa-dark
       port: 80      
   routes:
-- path: /
+    - path: /
       matches:
         - conditions:
           - cookie: "app_version"
             value: "dark"
           action:
             pass: spa-dark
+      action:
+        pass: spa
       action:
         pass: spa
     - path: /api
